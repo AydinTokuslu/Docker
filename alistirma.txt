@@ -104,7 +104,7 @@ touch abc1.txt oluşturmak istesek, oluşturamayız, çünkü read-only bir dosy
 15: Bilgisayarımızda bir klasör yaratalım “örneğin c:\deneme” ve bu klasörün içerisinde index.html adlı bir dosya yaratıp 
 bu dosyanın içerisine birkaç yazı ekleyelim.
 
-
+C:\Users\aydin\Desktop\Docker\web-sitesi-hands-on\deneme
 
 16: ozgurozturknet/adanzyedocker isimli imajdan websunucu1 adında detached ve “-p 80:80” ile portu publish edilmiş 
 bir container yaratalım. Bilgisayarımızda yarattığımız klasörü container’ın içerisindeki /usr/local/apache2/htdocs 
@@ -112,6 +112,12 @@ klasörüne mount edelim. Web browser açarak 127.0.0.1’e gidelim ve sitemizi 
 yarattığımız klasörün içerisindeki index.html dosyasını edit edelim ve yeni yazılar ekleyelim. 
 Web sayfasını refresh ederek bunların geldiğini görelim.
 
+docker container run -d --name websunucu -p 80:80 -v C:\Users\aydin\Desktop\Docker\web-sitesi-hands-on\deneme:/usr/local/apache2/htdocs ozgurozturknet/adanzyedocker
+
 17: Tüm çalışan container’ları silelim. 
+
+docker container ls
+docker container prune (çalışmayanların hepsini siler)
+docker container rm -f container id/isim (çalışıyor olsa bile zorla siler)
 
 
