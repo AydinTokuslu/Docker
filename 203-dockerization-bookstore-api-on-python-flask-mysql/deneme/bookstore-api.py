@@ -1,8 +1,6 @@
 # Import Flask modules
 from flask import Flask, jsonify, abort, request, make_response
 from flaskext.mysql import MySQL
-import mysql.connector
-import os
 
 # Create an object named app
 app = Flask(__name__)
@@ -140,7 +138,7 @@ def remove_book(book):
 # and assign to the static route of ('/')
 @app.route('/')
 def home():
-    return "Welcome to Callahan's Bookstore API Service"
+    return "Welcome to AydinT's Bookstore API Service"
 
 # Write a function named `get_books` which returns all books in JSON format for `GET`,
 # and assign to the static route of ('/books')
